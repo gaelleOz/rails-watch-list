@@ -1,0 +1,26 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo10swnjgYe7qZ8ttcRb-ywyCexwSi_TUXQUepRsNc&s);">
+  <div class="container">
+    <h1><strong><%= @list.name %></strong>(<%= @movies.count%>)</h1>
+
+  </div>
+</div>
+
+
+<ul class="d-flex flex-wrap allcards">
+    <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-product">
+    <img src= "<%= bookmark.movie.poster_url%>"/>
+    <div class="card-product-infos">
+     <h2><%= bookmark.movie.title %></h2>
+     <%= bookmark.movie.overview %></p>
+     <div>
+     <p><i class="fa-solid fa-star"></i>Rating: <%= bookmark.movie.rating %></p>
+     <%= bookmark.comment %>
+     <%= link_to raw('<i class="fa-solid fa-trash"></i>'), bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"pe-2 delete text-warning" %>
+     </div>
+   </div>
+  </div>
+  <% end %>
+</ul>
+
+<%= link_to "Back to lists", lists_path, class: "btn btn-ghost" %>

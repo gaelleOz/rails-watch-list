@@ -1,0 +1,27 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo10swnjgYe7qZ8ttcRb-ywyCexwSi_TUXQUepRsNc&s);">
+  <div class="container">
+    <h1>All your <strong>movies</strong> for <strong>you</strong></strong>!</h1>
+    <p data-controller="typed-js"> </p>
+
+  </div>
+</div>
+
+
+<ul class="d-flex flex-wrap allcards">
+    <% @lists.each do |list| %>
+    <div class="card-product">
+    <img src="https://source.unsplash.com/featured/?movie" />
+    <div class="card-product-infos">
+      <p> <%= link_to list.name, list_path(list) %></p>
+      </br>
+      <i class="fa-solid fa-circle-info"></i> <%= link_to "See details (movies)", list_path(list) %>
+      <div>
+      <i class="fa-solid fa-plus"></i> <%= link_to "Add a bookmark", new_list_bookmark_path(list) %>
+      </div>
+   </div>
+  </div>
+  <% end %>
+</ul>
+</div>
+
+<%= link_to "Ajouter une liste", new_list_path, class: "btn btn-ghost" %>

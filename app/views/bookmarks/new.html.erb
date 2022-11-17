@@ -1,0 +1,11 @@
+<h3 class="text-center mt-3"> Add a bookmark</h3>
+
+<div class="mt-5 ms-5">
+    <div class="form-group w-75">
+<%= simple_form_for [@list, @bookmark]  do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.button :submit, class: "btn btn-ghost" %>
+<% end %>
+</div>
+</div>
