@@ -1,12 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
   <div class="container">
-    <h1>All your <strong>movies</strong> for <strong>you</strong></strong>!</h1>
+    <h1>All <strong>movies</strong> for <strong>you</strong></strong>!</h1>
     <p data-controller="typed-js"> </p>
 
   </div>
 </div>
 
+<div><h1 class="text-center" id="choose">Choose a category</h1><hr class="w-25 mx-auto mb-5 "></div>
 
+<div class="container">
 <ul class="d-flex flex-wrap allcards">
     <% @lists.each do |list| %>
     <div class="card-product">
@@ -19,12 +21,16 @@
       <i class="fa-solid fa-circle-info"></i> <%= link_to "See details (movies)", list_path(list) %>
       <div>
       <i class="fa-solid fa-plus"></i> <%= link_to "Add a bookmark", new_list_bookmark_path(list) %>
-      <%= link_to raw('<i class="fa-solid fa-trash"></i>'), list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"pe-2 delete text-warning" %>
+      <div class= "remove">
+      <%= link_to raw('<i class="fa-solid fa-trash"></i> Remove a list'), list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"pe-2 delete text-light" %>
+     </div>
       </div>
    </div>
   </div>
   <% end %>
 </ul>
+<%= link_to "Ajouter une liste", new_list_path, class: "btn btn-ghost" %>
 </div>
 
-<%= link_to "Ajouter une liste", new_list_path, class: "btn btn-ghost" %>
+
+</div>
