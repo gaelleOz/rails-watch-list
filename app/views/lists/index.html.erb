@@ -10,13 +10,16 @@
 <ul class="d-flex flex-wrap allcards">
     <% @lists.each do |list| %>
     <div class="card-product">
-    <img src="https://source.unsplash.com/featured/?movie" />
+    <% if list.photo.key %>
+    <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <div class="card-product-infos">
       <p> <%= link_to list.name, list_path(list) %></p>
       </br>
       <i class="fa-solid fa-circle-info"></i> <%= link_to "See details (movies)", list_path(list) %>
       <div>
       <i class="fa-solid fa-plus"></i> <%= link_to "Add a bookmark", new_list_bookmark_path(list) %>
+      <%= link_to raw('<i class="fa-solid fa-trash"></i>'), list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"pe-2 delete text-warning" %>
       </div>
    </div>
   </div>
