@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo10swnjgYe7qZ8ttcRb-ywyCexwSi_TUXQUepRsNc&s);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
   <div class="container">
     <h1>All your <strong>movies</strong> for <strong>you</strong></strong>!</h1>
     <p data-controller="typed-js"> </p>
@@ -14,7 +14,7 @@
     <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
     <div class="card-product-infos">
-      <p> <%= link_to list.name, list_path(list) %></p>
+      <p> <%= link_to list.name, list_path(list), id:"name" %></p>
       </br>
       <i class="fa-solid fa-circle-info"></i> <%= link_to "See details (movies)", list_path(list) %>
       <div>

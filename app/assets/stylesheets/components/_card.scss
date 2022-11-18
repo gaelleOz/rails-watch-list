@@ -2,7 +2,7 @@
     overflow: hidden;
     height: 200px;
     width: 600px;
-    background:#faf0ca;
+    background:#704634;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
@@ -20,6 +20,7 @@
     font-size: 20px;
     font-weight: bold;
     margin: 0;
+    color: white;
   }
 
   .card-product p {
@@ -28,12 +29,16 @@
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
+    color: white;
   }
 
   .card-product a{
     text-decoration: none;
-    color: black;
-    font-size: 18px;
+    color:white;
+    font-size: 20px;
+  }
+  .card-product a:first-child{
+    font-size: 22px;
   }
 
   .card-product .card-product-infos {
